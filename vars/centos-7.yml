@@ -14,5 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_rpm_key:
+  - key: "https://dl.tvcdn.de/download/linux/signature/TeamViewer2017.asc"
+    fingerprint: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
+    state: "present"
+
+_yum_repository:
+  - file: "teamviewer"
+    name: "teamviewer"
+    description: "Centos 7 - x86_64 - Teamviewer"
+    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-$basearch/"
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: true
+    gpgkey: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+    state: "present"
+
 _yum:
-  - { state: "latest", name: "firefox" }
+  - { state: "latest", name: "teamviewer" }
