@@ -14,6 +14,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: yum install gnupg2
+  yum:
+    name: "gnupg2"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: teamviewer
+
+- name: rpm --import
+  rpm_key:
+    key: "{{ item.key }}"
+    fingerprint: "{{ item.fingerprint }}"
+    state: "{{ item.state }}"
+  loop: "{{ _rpm_key }}"
+  register: result
+  until: result is succeeded
+  tags: teamviewer
+
+- name: copy templates
+  template:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - { dest: "/etc/yum.repos.d/teamviewer.repo" }
+  tags: teamviewer
+
 - name: yum install
   yum:
     name: "{{ item.name }}"
