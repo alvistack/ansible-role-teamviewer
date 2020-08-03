@@ -14,5 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_rpm_key:
+  - key: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+    fingerprint: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
+    state: "present"
+
 _zypper:
-  - { state: "latest", name: "MozillaFirefox" }
+  - { state: "latest", name: "teamviewer-suse" }
