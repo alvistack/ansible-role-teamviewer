@@ -19,5 +19,16 @@ _rpm_key:
     fingerprint: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
     state: "present"
 
+_yum_repository:
+  - file: "teamviewer"
+    name: "teamviewer"
+    description: "TeamViewer - $basearch"
+    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-$basearch/"
+    enabled: true
+    gpgcheck: true
+    gpgkey: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+    failovermethod: "priority"
+    state: "present"
+
 _yum:
   - { state: "latest", name: "teamviewer" }

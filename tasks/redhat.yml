@@ -32,15 +32,19 @@
   until: result is succeeded
   tags: teamviewer
 
-- name: copy templates
-  template:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-  loop:
-    - { dest: "/etc/yum.repos.d/teamviewer.repo" }
+- name: yum-config-manager --add-repo
+  yum_repository:
+    file: "{{ item.file }}"
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    enabled: "{{ item.enabled }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    gpgkey: "{{ item.gpgkey }}"
+    failovermethod: "{{ item.failovermethod }}"
+    state: "{{ item.state }}"
+  loop: "{{ _yum_repository }}"
+  changed_when: false
   tags: teamviewer
 
 - name: yum install
