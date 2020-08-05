@@ -51,6 +51,7 @@
     state: "{{ item.state }}"
   loop: "{{ _yum_repository }}"
   changed_when: false
+  ignore_errors: true
   tags: teamviewer
 
 - name: zypper install
