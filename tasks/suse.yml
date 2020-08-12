@@ -14,6 +14,46 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: zypper install gpg2
+  vars:
+    ansible_python_interpreter: "python3"
+  zypper:
+    name: "gpg2"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: teamviewer
+
+- name: rpm --import
+  vars:
+    ansible_python_interpreter: "python3"
+  rpm_key:
+    key: "{{ item.key }}"
+    fingerprint: "{{ item.fingerprint }}"
+    state: "{{ item.state }}"
+    validate_certs: false
+  loop: "{{ _rpm_key }}"
+  register: result
+  until: result is succeeded
+  tags: teamviewer
+
+- name: yum-config-manager --add-repo
+  yum_repository:
+    file: "{{ item.file }}"
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    enabled: "{{ item.enabled }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    gpgkey: "{{ item.gpgkey }}"
+    failovermethod: "{{ item.failovermethod }}"
+    reposdir: "{{ item.reposdir }}"
+    state: "{{ item.state }}"
+  loop: "{{ _yum_repository }}"
+  changed_when: false
+  ignore_errors: true
+  tags: teamviewer
+
 - name: zypper install
   vars:
     ansible_python_interpreter: "python3"
