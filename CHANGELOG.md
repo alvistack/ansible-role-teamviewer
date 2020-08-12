@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Support openSUSE Leap 15.2
 ## 4.4.0 - 2020-08-12
 
   - Ininitial release for Ansible 2.9 or higher
