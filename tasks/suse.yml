@@ -31,7 +31,6 @@
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
-    validate_certs: false
   loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
@@ -44,11 +43,11 @@
     description: "{{ item.description }}"
     baseurl: "{{ item.baseurl }}"
     enabled: "{{ item.enabled }}"
+    priority: "{{ item.priority }}"
     gpgcheck: "{{ item.gpgcheck }}"
     gpgkey: "{{ item.gpgkey }}"
-    failovermethod: "{{ item.failovermethod }}"
-    reposdir: "{{ item.reposdir }}"
     state: "{{ item.state }}"
+    reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
   loop: "{{ _yum_repository }}"
   changed_when: false
   ignore_errors: true

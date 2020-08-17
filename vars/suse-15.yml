@@ -25,10 +25,9 @@ _yum_repository:
     description: "TeamViewer - $basearch"
     baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-$basearch/"
     enabled: true
+    priority: "2"
     gpgcheck: true
     gpgkey: "http://linux.teamviewer.com/pubkey/currentkey.asc"
-    failovermethod: "priority"
-    reposdir: "/etc/zypp/repos.d"
     state: "present"
 
 _zypper:
