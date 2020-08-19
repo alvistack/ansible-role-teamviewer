@@ -37,6 +37,7 @@
     repo: "{{ item.repo }}"
     filename: "{{ item.filename }}"
     state: "{{ item.state }}"
+    mode: "{{ item.mode | default('0644') }}"
   loop: "{{ _apt_repository }}"
   register: result
   until: result is succeeded
