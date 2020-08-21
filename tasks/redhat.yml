@@ -39,9 +39,9 @@
     description: "{{ item.description }}"
     baseurl: "{{ item.baseurl }}"
     enabled: "{{ item.enabled }}"
+    priority: "{{ item.priority }}"
     gpgcheck: "{{ item.gpgcheck }}"
     gpgkey: "{{ item.gpgkey }}"
-    failovermethod: "{{ item.failovermethod }}"
     state: "{{ item.state }}"
   loop: "{{ _yum_repository }}"
   changed_when: false
