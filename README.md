@@ -1,7 +1,7 @@
 # Ansible Role for TeamViewer
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-teamviewer.svg)](https://travis-ci.com/alvistack/ansible-role-teamviewer)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-teamviewer.svg)](https://github.com/alvistack/ansible-role-teamviewer)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-teamviewer.svg)](https://github.com/alvistack/ansible-role-teamviewer/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-teamviewer.svg)](https://github.com/alvistack/ansible-role-teamviewer/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.teamviewer-blue.svg)](https://galaxy.ansible.com/alvistack/teamviewer)
 
