@@ -22,7 +22,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: teamviewer
 
 - name: rpm --import
   vars:
@@ -34,7 +33,6 @@
   loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
-  tags: teamviewer
 
 - name: yum-config-manager --add-repo
   yum_repository:
@@ -51,7 +49,6 @@
   loop: "{{ _yum_repository }}"
   changed_when: false
   ignore_errors: true
-  tags: teamviewer
 
 - name: zypper install
   vars:
@@ -63,4 +60,3 @@
   loop: "{{ _zypper }}"
   register: result
   until: result is succeeded
-  tags: teamviewer
