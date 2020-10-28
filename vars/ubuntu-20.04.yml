@@ -20,7 +20,7 @@ _apt_key:
     state: "present"
 
 _apt_repository:
-  - repo: "deb http://linux.teamviewer.com/deb stable main"
+  - repo: "deb https://linux.teamviewer.com/deb stable main"
     filename: "teamviewer"
     state: "present"
 
