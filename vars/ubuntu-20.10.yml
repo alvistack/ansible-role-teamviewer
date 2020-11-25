@@ -14,21 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key:
-  - key: "http://linux.teamviewer.com/pubkey/currentkey.asc"
-    fingerprint: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
+_apt_key:
+  - url: "https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc"
+    id: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
     state: "present"
 
-_yum_repository:
-  - file: "teamviewer"
-    name: "teamviewer"
-    description: "TeamViewer - $basearch"
-    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-$basearch/"
-    enabled: true
-    priority: "2"
-    gpgcheck: true
-    gpgkey: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+_apt_repository:
+  - repo: "deb https://linux.teamviewer.com/deb stable main"
+    filename: "teamviewer"
     state: "present"
 
-_yum:
+_apt:
   - { state: "latest", name: "teamviewer" }
