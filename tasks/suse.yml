@@ -39,7 +39,7 @@
     reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
   loop: "{{ _yum_repository }}"
   changed_when: false
-  ignore_errors: true
+  failed_when: false
 
 - name: zypper install
   vars:
