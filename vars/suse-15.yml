@@ -22,8 +22,8 @@ _rpm_key:
 _yum_repository:
   - file: "teamviewer"
     name: "teamviewer"
-    description: "TeamViewer - $basearch"
-    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-$basearch/"
+    description: "TeamViewer - x86_64"
+    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-x86_64"
     enabled: true
     priority: "2"
     gpgcheck: true
