@@ -19,6 +19,6 @@
   become: true
   tasks:
     - name: teamviewer --version
-      command: teamviewer --version
+      ansible.builtin.command: teamviewer --version
       register: result
       changed_when: result is not succeeded
