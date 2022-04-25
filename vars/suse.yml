@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _rpm_key:
-  - key: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+  - key: "https://linux.teamviewer.com/pubkey/currentkey.asc"
     fingerprint: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
     state: "present"
 
@@ -23,12 +23,12 @@ _yum_repository:
   - file: "teamviewer"
     name: "teamviewer"
     description: "TeamViewer - x86_64"
-    baseurl: "http://linux.teamviewer.com/yum/stable/main/binary-x86_64"
+    baseurl: "https://linux.teamviewer.com/yum/preview/main/binary-x86_64"
     enabled: true
     priority: "2"
     module_hotfixes: true
     gpgcheck: true
-    gpgkey: "http://linux.teamviewer.com/pubkey/currentkey.asc"
+    gpgkey: "https://linux.teamviewer.com/pubkey/currentkey.asc"
     state: "present"
 
 _zypper:
