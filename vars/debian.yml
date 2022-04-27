@@ -16,13 +16,13 @@
 
 _apt_key:
   - keyring: "/etc/apt/trusted.gpg.d/teamviewer.gpg"
-    url: "http://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc"
+    url: "https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc"
     id: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
     state: "present"
 
 _apt_repository:
   - filename: "teamviewer"
-    repo: "deb http://linux.teamviewer.com/deb stable main"
+    repo: "deb https://linux.teamviewer.com/deb preview main"
     state: "present"
 
 _apt:
