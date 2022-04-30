@@ -23,7 +23,7 @@ _yum_repository:
   - file: "teamviewer"
     name: "teamviewer"
     description: "TeamViewer - x86_64"
-    baseurl: "https://linux.teamviewer.com/yum/preview/main/binary-x86_64"
+    baseurl: "https://linux.teamviewer.com/yum/stable/main/binary-x86_64"
     enabled: true
     priority: "2"
     module_hotfixes: true

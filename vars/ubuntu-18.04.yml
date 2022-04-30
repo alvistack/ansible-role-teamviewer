@@ -22,7 +22,7 @@ _apt_key:
 
 _apt_repository:
   - filename: "teamviewer"
-    repo: "deb https://linux.teamviewer.com/deb preview main"
+    repo: "deb https://linux.teamviewer.com/deb stable main"
     state: "present"
 
 _apt:
