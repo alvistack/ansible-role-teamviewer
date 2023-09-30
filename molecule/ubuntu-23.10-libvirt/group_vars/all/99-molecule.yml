@@ -13,17 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_apt_key:
-  - keyring: "/usr/share/keyrings/teamviewer-keyring.gpg"
-    url: "https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc"
-    id: "8CAE012EBFAC38B17A937CD8C5E224500C1289C0"
-    state: "present"
-
-_apt_repository:
-  - filename: "teamviewer"
-    repo: "deb [signed-by=/usr/share/keyrings/teamviewer-keyring.gpg] https://linux.teamviewer.com/deb stable main"
-    state: "present"
-
-_apt:
-  - { state: "latest", name: "teamviewer" }
