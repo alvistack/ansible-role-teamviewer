@@ -13,23 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_rpm_key:
-  - key: https://linux.teamviewer.com/pubkey/currentkey.asc
-    fingerprint: 8CAE012EBFAC38B17A937CD8C5E224500C1289C0
-    state: present
-
-_yum_repository:
-  - file: teamviewer
-    name: teamviewer
-    description: TeamViewer - x86_64
-    baseurl: https://linux.teamviewer.com/yum/stable/main/binary-x86_64
-    enabled: true
-    priority: "2"
-    module_hotfixes: true
-    gpgcheck: true
-    gpgkey: https://linux.teamviewer.com/pubkey/currentkey.asc
-    state: present
-
-_yum:
-  - { state: latest, name: teamviewer }
