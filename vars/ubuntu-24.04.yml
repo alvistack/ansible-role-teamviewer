@@ -14,13 +14,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_apt_key:
+  - url: https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+    dest: /etc/apt/keyrings/teamviewer.asc
+    checksum: "sha256:f2c277c9ce8be6dd73b58d23596185b53d745494c0aff825af647cd918971eaf"
+
 _deb822_repository:
   - name: teamviewer
     types: deb
     uris: https://linux.teamviewer.com/deb
     suites: stable
     components: main
-    signed_by: https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+    signed_by: /etc/apt/keyrings/teamviewer.asc
     enabled: true
     state: present
 
