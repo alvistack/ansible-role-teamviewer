@@ -15,9 +15,9 @@
 # limitations under the License.
 
 _apt_key:
-  - url: https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+  - url: https://linux.teamviewer.com/pubkey/currentkey.asc
     dest: /etc/apt/keyrings/teamviewer.asc
-    checksum: "sha256:f2c277c9ce8be6dd73b58d23596185b53d745494c0aff825af647cd918971eaf"
+    checksum: "sha256:b7910848a09cb3be64cc94a01f6d5a4591a5218f1681fa151b4d57a57563389c"
 
 _deb822_repository:
   - name: teamviewer
