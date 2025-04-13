@@ -29,5 +29,4 @@ _deb822_repository:
     enabled: true
     state: present
 
-_apt:
-  - { state: latest, name: teamviewer }
+_apt: []
