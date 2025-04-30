@@ -30,5 +30,4 @@ _deb822_repository:
     state: present
 
 _apt:
-  - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/p/policykit-1/policykit-1_124-2ubuntu1.24.10.2_amd64.deb }
   - { state: latest, name: teamviewer }
