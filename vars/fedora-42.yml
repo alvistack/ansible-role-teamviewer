@@ -16,7 +16,7 @@
 
 _rpm_key:
   - key: https://linux.teamviewer.com/pubkey/currentkey.asc
-    fingerprint: 8CAE012EBFAC38B17A937CD8C5E224500C1289C0
+    fingerprint: AB2985BDE164897BA46EA69A234FAACB575B15D1
     state: present
 
 _yum_repository:
