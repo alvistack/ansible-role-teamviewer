@@ -31,5 +31,5 @@ _yum_repository:
     gpgkey: https://linux.teamviewer.com/pubkey/currentkey.asc
     state: present
 
-_yum:
+_dnf:
   - { state: latest, name: teamviewer }
