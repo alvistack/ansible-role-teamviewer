@@ -23,6 +23,8 @@
   loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _rpm_key
 
 - name: yum-config-manager --add-repo
   ansible.builtin.yum_repository:
@@ -40,6 +42,8 @@
   loop: "{{ _yum_repository }}"
   changed_when: false
   failed_when: false
+  tags:
+    - _yum_repository
 
 - name: zypper install
   vars:
@@ -51,3 +55,5 @@
   loop: "{{ _zypper }}"
   register: result
   until: result is succeeded
+  tags:
+    - _zypper
